@@ -7,10 +7,24 @@
 # Inherit from marble device
 $(call inherit-product, device/xiaomi/marble/device.mk)
 
-# Inherit from common lineage configuration
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit from common clover stuff
+$(call inherit-product, vendor/clover/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_marble
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Clover assortment
+CLOVER_BUILDTYPE := OFFICIAL
+TARGET_SUPPORTS_BLUR := true
+TARGET_DISABLE_EPPE := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := false
+USE_PIXEL_CHARGER := true
+
+PRODUCT_NAME := clover_marble
 PRODUCT_DEVICE := marble
 PRODUCT_MANUFACTURER := Xiaomi
 
